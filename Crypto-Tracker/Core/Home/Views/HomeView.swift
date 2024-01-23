@@ -16,9 +16,12 @@ struct HomeView: View {
                 .ignoresSafeArea()
             VStack {
                 HStack {
-                    CircleButtonView(iconName: "info")
+                    
+                        CircleButtonView(iconName: showPortfolio ? "plus" : "info")
+                        .animation(.none)
+                    
                     Spacer()
-                    Text("Live Prices")
+                    Text(showPortfolio ? "Portfolio" : "Live Prices")
                         .font(.headline)
                         .fontWeight(.heavy)
                         .foregroundColor(Color.theme.accent)
@@ -38,8 +41,8 @@ struct HomeView: View {
     }
 }
 
-#Preview {
-    NavigationView {
+struct HomeView_preview: PreviewProvider {
+    static var previews: some View {
         HomeView()
     }
 }

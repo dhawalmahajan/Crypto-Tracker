@@ -20,9 +20,14 @@ struct CircleButtonView: View {
     }
 }
 
-#Preview(traits: .sizeThatFitsLayout) {
-    Group {
-        CircleButtonView(iconName: "heart.fill")
-            .padding()
+struct CircleButtonView_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            CircleButtonView(iconName: "heart.fill")
+                .previewLayout(.sizeThatFits)
+                .padding()
+
+
+        }
     }
 }
