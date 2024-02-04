@@ -9,8 +9,7 @@ import SwiftUI
 
 @main
 struct Crypto_TrackerApp: App {
-    let persistenceController = PersistenceController.shared
-
+    @StateObject private var viewModel = HomeViewModel()
     var body: some Scene {
         WindowGroup {
             NavigationView {
@@ -18,6 +17,7 @@ struct Crypto_TrackerApp: App {
                     .navigationBarHidden(true)
                     
             }
+            .environmentObject(viewModel)
         }
     }
 }
