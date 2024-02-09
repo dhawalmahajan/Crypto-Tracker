@@ -37,7 +37,7 @@ struct SearchbarView: View {
         .padding()
     }
 }
-
-#Preview{
+@available(iOS 17, *)
+#Preview(traits: .sizeThatFitsLayout){
     SearchbarView(searchText: .constant(""))
 }
